@@ -54,3 +54,35 @@ body {
   color: var(--text);
   line-height: 1.5;
 }
+
+/* ── SECTIONS ── */
+.section {
+  padding: 72px 8%;
+}
+
+.section.cream { background: var(--bg-cream); }
+.section.blue  { background: var(--bg-blue); }
+
+.section-inner {
+  max-width: 720px;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.section p:last-of-type {
+  margin-bottom: 28px;
+}
