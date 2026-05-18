@@ -1,0 +1,22 @@
+/* style.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-blue:    #D8E8ED;
+  --bg-cream:   #F0ECE0;
+  --teal:       #2C5F5A;
+  --coral:      #E8593A;
+  --coral-soft: #F0A882;
+  --text:       #2A2420;
+  --white:      #FFFFFF;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-blue);
+  color: var(--text);
+}
