@@ -86,3 +86,32 @@ body {
 .section p:last-of-type {
   margin-bottom: 28px;
 }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border: none;
+}
+
+.btn-more {
+  background: var(--coral);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.btn-more:hover {
+  background: #d44d31;
+}
+
+.btn-soon {
+  background: var(--coral-soft);
+  color: var(--white);
+  cursor: default;
+}
