@@ -10,6 +10,7 @@
   --bg-cream:   #F0ECE0;
   --teal:       #2C5F5A;
   --coral:      #E8593A;
+  --coral-dark: #d44d31;
   --coral-soft: #F0A882;
   --text:       #2A2420;
   --white:      #FFFFFF;
@@ -107,7 +108,7 @@ body {
 }
 
 .btn-more:hover {
-  background: #d44d31;
+  background: var(--coral-dark);
 }
 
 .btn-soon {
@@ -154,4 +155,10 @@ body {
 
 .social-link:hover {
   opacity: 1;
+}
+
+/* ── FOCUS ── */
+:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
 }
