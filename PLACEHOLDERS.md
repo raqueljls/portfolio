@@ -9,10 +9,9 @@ Fill these in one pass, working through each page below.
 
 | Placeholder | What to write |
 | --- | --- |
-| `[[ABOUT_SHORT]]` | About 60 words. First person. Who you are, what you do, for whom. Raquel is writing this. |
 | `IMAGE: YLP brand board or ad` | A thumbnail image for the YLP Studio work card. Replace the placeholder div with an `<img>` tag. |
 | `IMAGE: YLP Meta ads` | A thumbnail for the YLP ads work card. |
-| `IMAGE: Amazon listing set` | A thumbnail for the Amazon listing images work card. |
+| `IMAGE: Amazon listing set` | A thumbnail for the Amazon listing images work card. (Also appears in the offer card.) |
 
 Footer:
 - LinkedIn URL (replace the `#` in the LinkedIn anchor href)
@@ -24,7 +23,6 @@ Footer:
 
 | Placeholder | What to write |
 | --- | --- |
-| `[[ABOUT_SHORT]]` | Same short bio as the homepage. |
 | `[[ABOUT_LONG]]` | A few paragraphs. Longer version of the bio. Raquel is writing this. |
 | `[[JLS_DATES]]` | Start and end dates for the designer role at JLS, e.g. "Oct 2024 – Oct 2026". |
 
@@ -32,21 +30,20 @@ Footer:
 
 ## ylp-studio.html — YLP Studio case study
 
+Build notes (from Raquel, November 2026):
+- Leave out the brand board section. Raquel wrote copy and produced ads; the branding itself was not hers.
+- Show all ads as one group, not split into positioning and Q4.
+- Page copy and captions will come from a content doc Raquel will provide.
+
 | Placeholder | What to write |
 | --- | --- |
 | `[[YLP_INTRO]]` | 2 to 3 sentences: what YLP Studio was, who it was for, and Raquel's role in one line. |
-| `IMAGE: YLP brand board` | Brand board showing logo, colours and type. |
-| `[[YLP_BRAND_CAPTION]]` | One-line caption for the brand board. |
 | `IMAGE: YLP website screenshot 1` | Screenshot of yourlistingpartner.com. Best page or section. |
 | `IMAGE: YLP website screenshot 2` | Second screenshot (optional). |
 | `[[YLP_WEBSITE_CAPTION]]` | One-line caption, plus the live link (yourlistingpartner.com — confirm it should be linked). |
 | `[[YLP_HEADLINES]]` | Her best 2 to 3 headlines from the site, set large so the copy reads as her work. |
-| `IMAGE: YLP positioning ad 1` | Positioning ad (what set YLP apart). Show all sizes side by side if available. |
-| `IMAGE: YLP positioning ad 2` | Second positioning ad. |
-| `[[ADS_POSITIONING_CAPTION]]` | One caption line for the positioning ads group. |
-| `IMAGE: YLP Q4 ad carousel` | Peak season carousel (frames 1 to end). |
-| `IMAGE: YLP Q4 statics` | Peak season static ads (3 to 4). |
-| `[[ADS_Q4_CAPTION]]` | One caption line for the peak season ads group. |
+| `IMAGE: YLP ads` | All ads as one group. Show all sizes side by side if available. |
+| `[[ADS_CAPTION]]` | One caption line for the ads group. |
 
 ---
 

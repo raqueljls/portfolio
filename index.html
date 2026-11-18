@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Raquel Hoad — Marketing expert who designs</title>
+  <title>Raquel Hoad</title>
   <meta name="description" content="Raquel Hoad is a marketer with 10+ years of experience who now designs the assets herself. Freelance from Porto, working remotely.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Raquel Hoad — Marketing expert who designs">
+  <meta property="og:title" content="Raquel Hoad">
   <meta property="og:description" content="Raquel Hoad is a marketer with 10+ years of experience who now designs the assets herself. Freelance from Porto, working remotely.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://raquel-hoad-portfolio.netlify.app/">
@@ -36,89 +36,133 @@
   <main>
 
     <!-- HERO
-         To edit: change the h1, tagline, intro, or button labels below. -->
+         To edit: change the h1, intro, or button labels below. -->
     <section class="hero" aria-labelledby="hero-name">
       <div class="hero-grad" aria-hidden="true"></div>
       <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-lineart-layer" aria-hidden="true">
+        <svg id="hero-lineart" viewBox="0 0 1400 660" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
       <div class="hero-content">
-        <h1 id="hero-name">Raquel<br>Hoad</h1>
-        <p class="hero-tagline">Marketing expert who designs.</p>
-        <p class="hero-intro">Ten years in marketing, now designing the assets myself. I make visuals that do a job, not just look good.</p>
+        <h1 id="hero-name">Marketing expert who designs.</h1>
+        <div class="hero-intro">
+          <p>Hi, I'm Raquel.</p>
+          <p>I spent more than ten years in marketing, from content to social, from startups to multinationals, and now I've added design to my toolbox. Most recently I worked as a designer for a US digital retailer on ads and product images.</p>
+          <p>Now I do both: figure out what audiences need to hear, and make it hard to scroll past.</p>
+          <a href="about.html" class="text-link">More about me</a>
+        </div>
         <div class="btn-row">
           <a href="#work" class="btn-solid">See my work</a>
           <a href="mailto:raquelhoad@gmail.com" class="btn-outline">Get in touch</a>
         </div>
       </div>
     </section>
+    <script>
+    (function(){
+      var s=document.getElementById('hero-lineart');
+      if(!s)return;
+      function bz(t,a,b,c,d){var m=1-t;return m*m*m*a+3*m*m*t*b+3*m*t*t*c+t*t*t*d;}
+      function bzD(t,a,b,c,d){var m=1-t;return 3*(m*m*(b-a)+2*m*t*(c-b)+t*t*(d-c));}
+      function ribbon(ctrl,n,mo,sw){
+        var x0=ctrl[0],y0=ctrl[1],c1x=ctrl[2],c1y=ctrl[3],c2x=ctrl[4],c2y=ctrl[5],x1=ctrl[6],y1=ctrl[7];
+        var N=140;
+        for(var li=0;li<n;li++){
+          var rel=(li/(n-1)-0.5)*2,pts=[];
+          for(var i=0;i<=N;i++){
+            var t=i/N,px=bz(t,x0,c1x,c2x,x1),py=bz(t,y0,c1y,c2y,y1);
+            var dx=bzD(t,x0,c1x,c2x,x1),dy=bzD(t,y0,c1y,c2y,y1);
+            var len=Math.sqrt(dx*dx+dy*dy)||1,env=Math.sin(Math.PI*t);
+            pts.push([px+rel*mo*env*(-dy/len),py+rel*mo*env*(dx/len)]);
+          }
+          var d='';
+          for(var j=0;j<pts.length;j++)d+=(j?'L':'M')+pts[j][0].toFixed(1)+','+pts[j][1].toFixed(1);
+          var p=document.createElementNS('http://www.w3.org/2000/svg','path');
+          p.setAttribute('d',d);p.setAttribute('stroke','currentColor');
+          p.setAttribute('stroke-width',sw||'0.7');p.setAttribute('fill','none');
+          s.appendChild(p);
+        }
+      }
+      /* Single wave: rises from lower-right up to upper-center */
+      ribbon([1400,580, 500,700, 900,-60, 350,0], 24, 160, '0.6');
+    })();
+    </script>
 
-    <!-- WORK
-         To add or swap work thumbnails: copy one .work-thumb block, replace the
-         placeholder text and image path, and update the href. -->
-    <section id="work" class="section" aria-labelledby="work-heading">
+    <!-- B2B MARKETING -->
+    <section id="work" class="section section-alt" aria-labelledby="b2b-heading">
       <div class="section-inner">
-        <h2 class="section-label" id="work-heading">Work</h2>
-        <div class="work-grid">
+        <div class="b2b-layout">
 
-          <a href="ylp-studio.html" class="work-thumb">
-            <div class="work-thumb-placeholder" aria-label="IMAGE: YLP brand board">
-              IMAGE: YLP brand board
+          <div class="b2b-images">
+            <div class="b2b-ad-row">
+              <div class="b2b-ad" aria-label="IMAGE: YLP ad 1">IMAGE: YLP ad 1</div>
+              <div class="b2b-ad" aria-label="IMAGE: YLP ad 2">IMAGE: YLP ad 2</div>
             </div>
-            <span class="work-thumb-title">YLP Studio</span>
-            <span class="work-thumb-desc">Brand, website and ads</span>
-          </a>
+            <div class="b2b-ad b2b-ad--wide" aria-label="IMAGE: YLP ad 3">IMAGE: YLP ad 3</div>
+          </div>
 
-          <a href="ylp-studio.html" class="work-thumb">
-            <div class="work-thumb-placeholder" aria-label="IMAGE: YLP Meta ads">
-              IMAGE: YLP Meta ads
-            </div>
-            <span class="work-thumb-title">YLP ads</span>
-            <span class="work-thumb-desc">Positioning and peak season campaigns</span>
-          </a>
-
-          <a href="amazon-listing-images.html" class="work-thumb">
-            <div class="work-thumb-placeholder" aria-label="IMAGE: Amazon listing set">
-              IMAGE: Amazon listing set
-            </div>
-            <span class="work-thumb-title">Amazon listing images</span>
-            <span class="work-thumb-desc">Image sets for a US retailer</span>
-          </a>
+          <div class="b2b-text">
+            <h2 id="b2b-heading">B2B marketing</h2>
+            <p>Strategy, copywriting and ad production for B2B teams. For YLP Studio, a listing image studio selling to Amazon sellers, I worked out what would make busy sellers stop scrolling, then wrote and designed the ads to say it.</p>
+            <a href="ylp-studio.html" class="text-link">See the work</a>
+          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- SERVICES
-         To edit descriptions, update the <p> text inside each .service-card. -->
-    <section class="section section-alt" aria-labelledby="services-heading">
+    <!-- AMAZON LISTING IMAGES -->
+    <section class="section" aria-labelledby="amazon-heading">
       <div class="section-inner">
-        <h2 class="section-label" id="services-heading">Services</h2>
-        <div class="services-grid">
+        <div class="amazon-layout">
 
-          <a href="services.html" class="service-card">
-            <h3>Amazon listing images</h3>
-            <p>Image sets planned around what your shoppers want to know, from the first click to add to cart.</p>
-            <span class="card-cta">Learn more</span>
-          </a>
+          <div class="amazon-text">
+            <h2 id="amazon-heading">Amazon listing images</h2>
+            <p>Every image in a set answers a question shoppers have before they buy. Here's one main image, before and after.</p>
+            <p class="change-label">What changed</p>
+            <p>The new image answers what shoppers asked first: how many come in the pack, how big they are, and what actually fits inside.</p>
+            <a href="amazon-listing-images.html" class="text-link">See the work</a>
+          </div>
 
-          <a href="services.html" class="service-card">
-            <h3>B2B marketing support</h3>
-            <p>Ads, emails and content for B2B teams, written and designed by one person.</p>
-            <span class="card-cta">Learn more</span>
-          </a>
+          <div class="amazon-visual">
+            <div class="slider-wrap" id="listing-slider">
+              <div class="slider-layer slider-layer--after">
+                <div class="slider-ph">AFTER</div>
+              </div>
+              <div class="slider-layer slider-layer--before" id="slider-before">
+                <div class="slider-ph">BEFORE</div>
+              </div>
+              <div class="slider-divider" id="slider-divider" aria-hidden="true">
+                <div class="slider-grip"></div>
+              </div>
+              <span class="slider-tag slider-tag--b" aria-hidden="true">BEFORE</span>
+              <span class="slider-tag slider-tag--a" aria-hidden="true">AFTER</span>
+            </div>
+          </div>
 
         </div>
       </div>
     </section>
-
-    <!-- ABOUT
-         Replace [[ABOUT_SHORT]] with ~60 words. Raquel is writing this. -->
-    <section class="section" aria-labelledby="about-heading">
-      <div class="section-inner section-inner--narrow">
-        <h2 class="section-label" id="about-heading">About</h2>
-        <p class="about-blurb">[[ABOUT_SHORT]]</p>
-        <a href="about.html" class="text-link">More about me</a>
-      </div>
-    </section>
+    <script>
+    (function() {
+      var wrap = document.getElementById('listing-slider');
+      if (!wrap) return;
+      var before = document.getElementById('slider-before');
+      var divider = document.getElementById('slider-divider');
+      var dragging = false;
+      function update(x) {
+        var rect = wrap.getBoundingClientRect();
+        var pct = Math.max(0, Math.min(100, (x - rect.left) / rect.width * 100));
+        before.style.clipPath = 'inset(0 ' + (100 - pct).toFixed(1) + '% 0 0)';
+        divider.style.left = pct.toFixed(1) + '%';
+      }
+      wrap.addEventListener('mousedown', function(e) { e.preventDefault(); dragging = true; update(e.clientX); });
+      window.addEventListener('mousemove', function(e) { if (dragging) update(e.clientX); });
+      window.addEventListener('mouseup', function() { dragging = false; });
+      wrap.addEventListener('touchstart', function(e) { dragging = true; update(e.touches[0].clientX); }, {passive: true});
+      wrap.addEventListener('touchmove', function(e) { if (dragging) { e.preventDefault(); update(e.touches[0].clientX); } }, {passive: false});
+      window.addEventListener('touchend', function() { dragging = false; });
+    })();
+    </script>
 
     <!-- CONTACT -->
     <section class="section section-alt section-contact" aria-labelledby="contact-heading">
