@@ -410,21 +410,29 @@ a { color: inherit; }
   align-items: center;
 }
 
-.b2b-images {
+.b2b-carousel-wrap {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
-.b2b-ad-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+.b2b-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.b2b-carousel-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.b2b-carousel-slide {
+  min-width: 100%;
 }
 
 .b2b-ad {
   aspect-ratio: 1 / 1;
-  border-radius: 6px;
   background: var(--cream-deep);
   display: flex;
   align-items: center;
@@ -432,11 +440,51 @@ a { color: inherit; }
   font-size: 0.75rem;
   color: var(--ink-mid);
   overflow: hidden;
+  width: 100%;
 }
 
-.b2b-ad--wide {
-  aspect-ratio: 2 / 1;
+.b2b-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.88);
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: background 0.15s;
 }
+
+.b2b-carousel-btn:hover { background: white; }
+.b2b-carousel-btn--prev { left: 10px; }
+.b2b-carousel-btn--next { right: 10px; }
+
+.b2b-carousel-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.b2b-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: var(--ink);
+  opacity: 0.2;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.b2b-dot--active { opacity: 1; }
 
 .b2b-text h2,
 .amazon-text h2 {
@@ -488,7 +536,7 @@ a { color: inherit; }
   border-radius: 8px;
   user-select: none;
   cursor: ew-resize;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   touch-action: none;
 }
 

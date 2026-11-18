@@ -49,7 +49,6 @@
           <p>Hi, I'm Raquel.</p>
           <p>I spent more than ten years in marketing, from content to social, from startups to multinationals, and now I've added design to my toolbox. Most recently I worked as a designer for a US digital retailer on ads and product images.</p>
           <p>Now I do both: figure out what audiences need to hear, and make it hard to scroll past.</p>
-          <a href="about.html" class="text-link">More about me</a>
         </div>
         <div class="btn-row">
           <a href="#work" class="btn-solid">See my work</a>
@@ -92,12 +91,27 @@
       <div class="section-inner">
         <div class="b2b-layout">
 
-          <div class="b2b-images">
-            <div class="b2b-ad-row">
-              <div class="b2b-ad" aria-label="IMAGE: YLP ad 1">IMAGE: YLP ad 1</div>
-              <div class="b2b-ad" aria-label="IMAGE: YLP ad 2">IMAGE: YLP ad 2</div>
+          <div class="b2b-carousel-wrap">
+            <div class="b2b-carousel" id="b2b-carousel">
+              <div class="b2b-carousel-track" id="b2b-track">
+                <div class="b2b-carousel-slide">
+                  <div class="b2b-ad" aria-label="IMAGE: YLP ad 1">IMAGE: YLP ad 1</div>
+                </div>
+                <div class="b2b-carousel-slide">
+                  <div class="b2b-ad" aria-label="IMAGE: YLP ad 2">IMAGE: YLP ad 2</div>
+                </div>
+                <div class="b2b-carousel-slide">
+                  <div class="b2b-ad" aria-label="IMAGE: YLP ad 3">IMAGE: YLP ad 3</div>
+                </div>
+              </div>
+              <button class="b2b-carousel-btn b2b-carousel-btn--prev" id="b2b-prev" aria-label="Previous ad">&#8592;</button>
+              <button class="b2b-carousel-btn b2b-carousel-btn--next" id="b2b-next" aria-label="Next ad">&#8594;</button>
             </div>
-            <div class="b2b-ad b2b-ad--wide" aria-label="IMAGE: YLP ad 3">IMAGE: YLP ad 3</div>
+            <div class="b2b-carousel-dots">
+              <button class="b2b-dot b2b-dot--active" id="b2b-dot-0" aria-label="Ad 1 of 3"></button>
+              <button class="b2b-dot" id="b2b-dot-1" aria-label="Ad 2 of 3"></button>
+              <button class="b2b-dot" id="b2b-dot-2" aria-label="Ad 3 of 3"></button>
+            </div>
           </div>
 
           <div class="b2b-text">
@@ -142,6 +156,30 @@
         </div>
       </div>
     </section>
+    <script>
+    (function() {
+      var track = document.getElementById('b2b-track');
+      if (!track) return;
+      var total = 3;
+      var current = 0;
+      function go(n) {
+        current = (n + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        for (var i = 0; i < total; i++) {
+          var dot = document.getElementById('b2b-dot-' + i);
+          if (dot) dot.classList.toggle('b2b-dot--active', i === current);
+        }
+      }
+      document.getElementById('b2b-prev').addEventListener('click', function() { go(current - 1); });
+      document.getElementById('b2b-next').addEventListener('click', function() { go(current + 1); });
+      for (var i = 0; i < total; i++) {
+        (function(idx) {
+          var dot = document.getElementById('b2b-dot-' + idx);
+          if (dot) dot.addEventListener('click', function() { go(idx); });
+        })(i);
+      }
+    })();
+    </script>
     <script>
     (function() {
       var wrap = document.getElementById('listing-slider');
